@@ -99,3 +99,67 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .puzzle-tile {
+    @apply flex items-center justify-center font-bold rounded-md transition-all duration-300 shadow-md;
+  }
+  
+  .puzzle-tile-8 {
+    @apply bg-gradient-to-br from-puzzle-primary to-puzzle-secondary text-white;
+  }
+  
+  .puzzle-tile-empty {
+    @apply bg-transparent border-2 border-dashed border-gray-300;
+  }
+  
+  .puzzle-tile-sudoku {
+    @apply bg-white border border-gray-300 hover:border-puzzle-primary;
+  }
+  
+  .puzzle-tile-sudoku-fixed {
+    @apply bg-gray-100 text-puzzle-dark font-bold;
+  }
+  
+  .puzzle-board-container {
+    @apply p-6 bg-white rounded-xl shadow-lg;
+  }
+  
+  .puzzle-button {
+    @apply px-4 py-2 rounded-md transition-colors duration-200 font-medium;
+  }
+  
+  .puzzle-button-primary {
+    @apply bg-puzzle-primary hover:bg-opacity-90 text-white;
+  }
+  
+  .puzzle-button-secondary {
+    @apply bg-puzzle-secondary hover:bg-opacity-90 text-white;
+  }
+  
+  .puzzle-button-outlined {
+    @apply border-2 border-puzzle-primary text-puzzle-primary hover:bg-puzzle-primary hover:bg-opacity-10;
+  }
+  
+  .puzzle-solution-step {
+    @apply animate-fade-in;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-pulse-once {
+  animation: pulse 0.5s ease-in-out;
+}

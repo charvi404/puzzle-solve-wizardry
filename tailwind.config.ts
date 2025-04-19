@@ -28,6 +28,13 @@ export default {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
+				puzzle: {
+					primary: '#6366f1',
+					secondary: '#8b5cf6',
+					accent: '#d946ef',
+					light: '#f0f9ff',
+					dark: '#1e293b',
+				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
